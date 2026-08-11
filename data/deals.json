@@ -16,7 +16,9 @@
     "year": "2026",
     "confidence": "disclosed",
     "source": "https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-emission-obligations-echeant-fevrier-2065-marche-canadien13.html",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "boralex-brookfield-lacaisse",
@@ -35,7 +37,9 @@
     "year": "2026",
     "confidence": "disclosed",
     "source": "https://ca.boralex.com/fr/salle-de-presse/boralex-conclut-une-entente-definitive-en-vue-de-son-acquisition-par-brookfield-et",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "innergex-cdpq",
@@ -54,7 +58,9 @@
     "year": "2025",
     "confidence": "disclosed",
     "source": "https://www.lacaisse.com/en/news/pressreleases/innergex-enters-definitive-agreement-be-acquired-cdpq-1375-share",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "gardaworld-notes-tlb-2026",
@@ -73,7 +79,9 @@
     "year": "2026",
     "confidence": "disclosed",
     "source": "https://www.gardaworld.com/news/gardaworld-announces-closing-of-us200-million-additional-senior-notes-due-2032-and-us300-million-incremental-term-loans",
-    "retrieved": "2026-08-11"
+    "retrieved": "2026-08-11",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "5c-brookfield-605m",
@@ -92,7 +100,9 @@
     "year": "2026",
     "confidence": "disclosed",
     "source": "https://5c.ai/news/5c-secures-more-than-usd-1-4-billion-to-power-north-americas-ai-infrastructure",
-    "retrieved": "2026-08-11"
+    "retrieved": "2026-08-11",
+    "sector": "digital",
+    "sector_label": "Digital infra"
   },
   {
     "id": "a25-transurban-buyout",
@@ -111,7 +121,9 @@
     "year": "2026",
     "confidence": "disclosed",
     "source": "https://www.lacaisse.com/fr/actualites/communiques/caisse-achete-participation-restante-transurban-devenant-ainsi-lunique",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "transport",
+    "sector_label": "Transport"
   },
   {
     "id": "logistec-bluewolf",
@@ -130,7 +142,9 @@
     "year": "2023",
     "confidence": "disclosed",
     "source": "https://www.logistec.com/logistec-corporation-enters-into-definitive-agreement-to-be-acquired-by-blue-wolf-capital-partners/",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "transport",
+    "sector_label": "Transport"
   },
   {
     "id": "estruxture-fengate",
@@ -149,7 +163,9 @@
     "year": "2024",
     "confidence": "disclosed",
     "source": "https://www.estruxture.com/press-releases/fengate-leads-transformative-1-8-billion-investment-to-amplify-estruxture-data-centers-hyperscale-growth",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "digital",
+    "sector_label": "Digital infra"
   },
   {
     "id": "boralex-sub-debt-2025",
@@ -168,7 +184,9 @@
     "year": "2025",
     "confidence": "disclosed",
     "source": "https://ca.boralex.com/fr/salle-de-presse/la-caisse-et-fondaction-investissent-250-m-sous-forme-de-dette-subordonnee-dans",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "innergex-td-senior-facility",
@@ -187,7 +205,9 @@
     "year": "2025",
     "confidence": "disclosed",
     "source": "https://www.lacaisse.com/en/news/pressreleases/innergex-enters-definitive-agreement-be-acquired-cdpq-1375-share",
-    "retrieved": "2026-08-11"
+    "retrieved": "2026-08-11",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "heroux-devtek-platinum",
@@ -206,7 +226,9 @@
     "year": "2025",
     "confidence": "disclosed",
     "source": "https://investisseurs.herouxdevtek.com/2025-02-11-HEROUX-DEVTEK-ANNONCE-LA-REALISATION-DE-LACQUISITION-PAR-PLATINUM-EQUITY",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "nuvei-advent",
@@ -225,7 +247,9 @@
     "year": "2024",
     "confidence": "disclosed",
     "source": "https://novacapcorp.com/fr/news/nuvei-conclut-une-convention-de-transformation-en-societe-fermee-avec-advent-international/",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "energir-2025-1",
@@ -244,7 +268,9 @@
     "year": "2025",
     "confidence": "disclosed",
     "source": "https://energir.com/fr/a-propos/medias/nouvelles/energir-placement-prive-obligations-2025-1",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "energir-2023-1",
@@ -263,7 +289,9 @@
     "year": "2023",
     "confidence": "disclosed",
     "source": "https://energir.com/fr/a-propos/medias/nouvelles/placement-prive-obligations-premiere-hypotheque-serie-2023",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "energir-2024-units",
@@ -282,7 +310,9 @@
     "year": "2024",
     "confidence": "disclosed",
     "source": "https://energir.com/fr/a-propos/medias/nouvelles/placement-privé-dobligations-de-première-hypothèque-série-2024",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "energir-2023-units",
@@ -301,7 +331,9 @@
     "year": "2023",
     "confidence": "disclosed",
     "source": "https://energir.com/fr/a-propos/medias/nouvelles/placement-de-titre-de-participation-3910d",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "5c-brookfield",
@@ -320,7 +352,9 @@
     "year": "2025",
     "confidence": "disclosed",
     "source": "https://5c.ai/news/5c-group-secures-835-million-of-capital-from-brookfield-and-deutsche-bank",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "digital",
+    "sector_label": "Digital infra"
   },
   {
     "id": "nesto-series-e",
@@ -339,7 +373,9 @@
     "year": "2026",
     "confidence": "disclosed",
     "source": "https://www.lacaisse.com/fr/actualites/communiques/nesto-obtient-302-millions-dollars-financement-serie-e-afin-daccelerer",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "hypertec-5c-merger",
@@ -358,7 +394,9 @@
     "year": "2025",
     "confidence": "confidential",
     "source": "https://5c.ai/news/5c-group-formed-as-hypertec-cloud-acquires-5c-data-centers-creating-one-of-the-largest-ai-digital-infrastructure-providers-in-north-america",
-    "retrieved": "2026-08-11"
+    "retrieved": "2026-08-11",
+    "sector": "digital",
+    "sector_label": "Digital infra"
   },
   {
     "id": "apuiat-cod",
@@ -377,7 +415,9 @@
     "year": "2025",
     "confidence": "confidential",
     "source": "https://ca.boralex.com/fr/salle-de-presse/mise-en-service-commerciale-du-parc-eolien-apuiat-debut-dune-nouvelle-ere",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "energy",
+    "sector_label": "Energy"
   },
   {
     "id": "rossi-aero-meloche",
@@ -396,7 +436,9 @@
     "year": "2026",
     "confidence": "confidential",
     "source": "https://novacapcorp.com/fr/news/groupe-meloche-acquiert-groupe-rossi-aero-avec-le-soutien-de-novacap-et-dautres-partenaires/",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "intramodal-alliance",
@@ -415,7 +457,9 @@
     "year": "2025",
     "confidence": "confidential",
     "source": "https://novacapcorp.com/fr/news/alliance-solution-group-sannonce-lacquisition-strategique-dintramodal/",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "transport",
+    "sector_label": "Transport"
   },
   {
     "id": "eddyfi-esab",
@@ -434,7 +478,9 @@
     "year": "2026",
     "confidence": "confidential",
     "source": "https://novacapcorp.com/fr/news/novacap-conclut-avec-succes-sa-sortie-deddyfi-technologies/",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "gardaworld-recap",
@@ -453,7 +499,9 @@
     "year": "2025",
     "confidence": "unverified",
     "source": "",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "midmkt",
+    "sector_label": "Mid-market"
   },
   {
     "id": "saint-jerome-bitdigital",
@@ -472,6 +520,8 @@
     "year": "2024",
     "confidence": "unverified",
     "source": "",
-    "retrieved": "2026-08-10"
+    "retrieved": "2026-08-10",
+    "sector": "digital",
+    "sector_label": "Digital infra"
   }
 ]

@@ -58,7 +58,7 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.7vw,2.05r
 .count{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:12px}
 
 .tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--rule)}
-table{width:100%;border-collapse:collapse;min-width:940px}
+table{width:100%;border-collapse:collapse;min-width:1040px}
 thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:13px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;background:var(--surface)}
 tbody td{padding:15px 14px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px}
 tbody tr:last-child td{border-bottom:0}
@@ -76,6 +76,9 @@ tbody tr:hover{background:#F6F8F9}
 .src:hover{border-bottom-color:var(--hydro)}
 .src.none{color:var(--muted);border:0}
 .f-unv{background:rgba(184,112,26,.2);color:#8A5312;font-weight:500}
+.sect{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap;background:rgba(100,117,127,.1);color:var(--slate)}
+.s-energy{background:rgba(10,92,122,.1);color:var(--hydro)}
+.s-digital{background:rgba(184,112,26,.12);color:#8A5312}
 .origin{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .o-qc{color:var(--hydro)}.o-roc{color:var(--slate)}.o-us{color:var(--amber)}
 
@@ -163,6 +166,14 @@ footer strong{color:var(--slate);font-weight:500}
         <button class="chip" data-g="o" data-v="roc" aria-pressed="false">Rest of Canada</button>
         <button class="chip" data-g="o" data-v="us" aria-pressed="false">US</button>
       </div>
+      <div class="fgroup" role="group" aria-label="Filter by sector">
+        <span class="flabel">Sector</span>
+        <button class="chip" data-g="s" data-v="all" aria-pressed="true">All</button>
+        <button class="chip" data-g="s" data-v="energy" aria-pressed="false">Energy</button>
+        <button class="chip" data-g="s" data-v="digital" aria-pressed="false">Digital infra</button>
+        <button class="chip" data-g="s" data-v="transport" aria-pressed="false">Transport</button>
+        <button class="chip" data-g="s" data-v="midmkt" aria-pressed="false">Mid-market</button>
+      </div>
       <div class="fgroup" role="group" aria-label="Filter by period">
         <span class="flabel">Period</span>
         <button class="chip" data-g="p" data-v="all" aria-pressed="true">All</button>
@@ -173,7 +184,7 @@ footer strong{color:var(--slate);font-weight:500}
 
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Asset</th><th>Acquirer</th><th>Origin</th><th>Value</th><th>Structure</th><th>Date</th><th>Terms</th></tr></thead>
+        <thead><tr><th>Asset</th><th>Sector</th><th>Acquirer</th><th>Origin</th><th>Value</th><th>Structure</th><th>Date</th><th>Terms</th></tr></thead>
         <tbody id="tb">
 {{ROWS}}
         </tbody>
@@ -282,7 +293,7 @@ footer strong{color:var(--slate);font-weight:500}
   }
 
   // table filters
-  var state={o:'all',p:'all',w:'7'};
+  var state={o:'all',p:'all',s:'all',w:'7'};
   var rows=[].slice.call(document.querySelectorAll('#tb tr'));
   var logrows=[].slice.call(document.querySelectorAll('.logrow'));
   var count=document.getElementById('count');
@@ -292,7 +303,7 @@ footer strong{color:var(--slate);font-weight:500}
   function apply(){
     var n=0;
     rows.forEach(function(r){
-      var ok=(state.o==='all'||r.dataset.o===state.o)&&(state.p==='all'||r.dataset.p===state.p);
+      var ok=(state.o==='all'||r.dataset.o===state.o)&&(state.p==='all'||r.dataset.p===state.p)&&(state.s==='all'||r.dataset.s===state.s);
       r.style.display=ok?'':'none'; if(ok)n++;
     });
     count.textContent=n+' of '+rows.length+' transactions';

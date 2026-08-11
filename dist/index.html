@@ -58,7 +58,7 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.7vw,2.05r
 .count{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:12px}
 
 .tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--rule)}
-table{width:100%;border-collapse:collapse;min-width:940px}
+table{width:100%;border-collapse:collapse;min-width:1040px}
 thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:13px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;background:var(--surface)}
 tbody td{padding:15px 14px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px}
 tbody tr:last-child td{border-bottom:0}
@@ -76,6 +76,9 @@ tbody tr:hover{background:#F6F8F9}
 .src:hover{border-bottom-color:var(--hydro)}
 .src.none{color:var(--muted);border:0}
 .f-unv{background:rgba(184,112,26,.2);color:#8A5312;font-weight:500}
+.sect{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap;background:rgba(100,117,127,.1);color:var(--slate)}
+.s-energy{background:rgba(10,92,122,.1);color:var(--hydro)}
+.s-digital{background:rgba(184,112,26,.12);color:#8A5312}
 .origin{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .o-qc{color:var(--hydro)}.o-roc{color:var(--slate)}.o-us{color:var(--amber)}
 
@@ -163,6 +166,14 @@ footer strong{color:var(--slate);font-weight:500}
         <button class="chip" data-g="o" data-v="roc" aria-pressed="false">Rest of Canada</button>
         <button class="chip" data-g="o" data-v="us" aria-pressed="false">US</button>
       </div>
+      <div class="fgroup" role="group" aria-label="Filter by sector">
+        <span class="flabel">Sector</span>
+        <button class="chip" data-g="s" data-v="all" aria-pressed="true">All</button>
+        <button class="chip" data-g="s" data-v="energy" aria-pressed="false">Energy</button>
+        <button class="chip" data-g="s" data-v="digital" aria-pressed="false">Digital infra</button>
+        <button class="chip" data-g="s" data-v="transport" aria-pressed="false">Transport</button>
+        <button class="chip" data-g="s" data-v="midmkt" aria-pressed="false">Mid-market</button>
+      </div>
       <div class="fgroup" role="group" aria-label="Filter by period">
         <span class="flabel">Period</span>
         <button class="chip" data-g="p" data-v="all" aria-pressed="true">All</button>
@@ -176,10 +187,11 @@ footer strong{color:var(--slate);font-weight:500}
 
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Asset</th><th>Acquirer</th><th>Origin</th><th>Value</th><th>Structure</th><th>Date</th><th>Terms</th></tr></thead>
+        <thead><tr><th>Asset</th><th>Sector</th><th>Acquirer</th><th>Origin</th><th>Value</th><th>Structure</th><th>Date</th><th>Terms</th></tr></thead>
         <tbody id="tb">
-          <tr data-o="qc" data-p="2026">
+          <tr data-o="qc" data-p="2026" data-s="energy">
             <td><div class="asset">Hydro-Québec Series JU</div><div class="sub">17th reopening · matures 15 Feb 2065</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>RBC Dominion lead<div class="sub">NBF and TD co-leads · BMO, CIBC, Scotia, Desjardins, Laurentian, Casgrain</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$500M<div class="sub">Series now C$9.0B outstanding</div></td>
@@ -187,8 +199,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">7 Aug 2026<div class="sub">Closing 11 Aug</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://nouvelles.hydroquebec.com/nouvelles/communiques/tout-quebec/hydro-quebec-emission-obligations-echeant-fevrier-2065-marche-canadien13.html" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="roc" data-p="2026">
+          <tr data-o="roc" data-p="2026" data-s="energy">
             <td><div class="asset">Boralex</div><div class="sub">3,800 MW · wind, solar, hydro, storage</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>Brookfield 70% / La Caisse 30%<div class="sub">La Caisse rolls from ~15%</div></td>
             <td><span class="origin o-roc">ROC + QC</span></td>
             <td class="num">C$9.0B EV<div class="sub">C$9.7B combined · 13× 2026E EBITDA</div></td>
@@ -196,8 +209,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">Pending<div class="sub">Announced 25 Mar 2026</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://ca.boralex.com/fr/salle-de-presse/boralex-conclut-une-entente-definitive-en-vue-de-son-acquisition-par-brookfield-et" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="energy">
             <td><div class="asset">Innergex</div><div class="sub">Renewable IPP · Longueuil</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>CDPQ, now La Caisse<div class="sub">Hydro-Québec held 19.9% and signed a support agreement · up to 20% later syndicated</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$10.0B EV<div class="sub">C$13.75 cash per common share · C$25.00 per preferred</div></td>
@@ -205,8 +219,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">25 Feb 2025<div class="sub">Closed 21 Jul 2025</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.lacaisse.com/en/news/pressreleases/innergex-enters-definitive-agreement-be-acquired-cdpq-1375-share" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2026">
+          <tr data-o="qc" data-p="2026" data-s="midmkt">
             <td><div class="asset">GardaWorld</div><div class="sub">Security services · Montréal · 132,000 employees</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>Rule 144A private offering<div class="sub">Bond ~3× oversubscribed · Term Loan B ~2× oversubscribed</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">US$500M combined<div class="sub">US$200M notes · US$300M incremental term loans</div></td>
@@ -214,8 +229,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">6 Jul 2026<div class="sub">Closed</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.gardaworld.com/news/gardaworld-announces-closing-of-us200-million-additional-senior-notes-due-2032-and-us300-million-incremental-term-loans" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="roc" data-p="2026">
+          <tr data-o="roc" data-p="2026" data-s="digital">
             <td><div class="asset">5C Group</div><div class="sub">AI data centre campuses · Montreal · 1.5+ GW roadmap</div></td>
+            <td><span class="sect s-digital">Digital infra</span></td>
             <td>Brookfield Asset Management<div class="sub">Lead · funds Memphis acquisition and construction, Ohio and Phoenix expansion</div></td>
             <td><span class="origin o-roc">Rest of Canada</span></td>
             <td class="num">US$605M<div class="sub">Over US$1.4B raised in total to date</div></td>
@@ -223,8 +239,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">10 Aug 2026<div class="sub">Closed</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://5c.ai/news/5c-secures-more-than-usd-1-4-billion-to-power-north-americas-ai-infrastructure" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2026">
+          <tr data-o="qc" data-p="2026" data-s="transport">
             <td><div class="asset">Concession A25</div><div class="sub">7.2 km tolled highway and bridge · Montreal</div></td>
+            <td><span class="sect ">Transport</span></td>
             <td>La Caisse<div class="sub">Buys out Transurban · operated by Plenary Americas</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$280M equity</td>
@@ -232,8 +249,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">9 Jun 2026</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.lacaisse.com/fr/actualites/communiques/caisse-achete-participation-restante-transurban-devenant-ainsi-lunique" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="us" data-p="2023">
+          <tr data-o="us" data-p="2023" data-s="transport">
             <td><div class="asset">Logistec</div><div class="sub">Marine terminals</div></td>
+            <td><span class="sect ">Transport</span></td>
             <td>Blue Wolf Capital with Stonepeak<div class="sub">Investissement Québec participation contemplated</div></td>
             <td><span class="origin o-us">US + QC</span></td>
             <td class="num">~C$1.2B EV<div class="sub">C$67.00 cash per share</div></td>
@@ -241,8 +259,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">16 Oct 2023<div class="sub">Announced · closed 2024</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.logistec.com/logistec-corporation-enters-into-definitive-agreement-to-be-acquired-by-blue-wolf-capital-partners/" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="roc" data-p="2024">
+          <tr data-o="roc" data-p="2024" data-s="digital">
             <td><div class="asset">eStruxture</div><div class="sub">15 facilities · 760,000+ sq ft · 130+ MW</div></td>
+            <td><span class="sect s-digital">Digital infra</span></td>
             <td>Fengate Asset Management<div class="sub">Secondaries co-led by Partners Group and Pantheon · Wener family and management roll over</div></td>
             <td><span class="origin o-roc">Rest of Canada</span></td>
             <td class="num">C$1.8B<div class="sub">Largest deal in the Canadian data centre sector</div></td>
@@ -250,8 +269,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">19 Jun 2024<div class="sub">Completed</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.estruxture.com/press-releases/fengate-leads-transformative-1-8-billion-investment-to-amplify-estruxture-data-centers-hyperscale-growth" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="energy">
             <td><div class="asset">Boralex subordinated debt</div><div class="sub">Pre-buyout financing</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>La Caisse and Fondaction<div class="sub">Both Quebec institutions</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$250M</td>
@@ -259,8 +279,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">7 Jul 2025</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://ca.boralex.com/fr/salle-de-presse/la-caisse-et-fondaction-investissent-250-m-sous-forme-de-dette-subordonnee-dans" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="roc" data-p="2025">
+          <tr data-o="roc" data-p="2025" data-s="energy">
             <td><div class="asset">Innergex senior financing</div><div class="sub">Funds the take-private and repays existing debt</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>TD Securities<div class="sub">Sole underwriter, sole lead arranger and sole bookrunner</div></td>
             <td><span class="origin o-roc">Rest of Canada</span></td>
             <td class="num">C$1.2B<div class="sub">Fully underwritten</div></td>
@@ -268,8 +289,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">25 Feb 2025<div class="sub">Announced with the arrangement</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.lacaisse.com/en/news/pressreleases/innergex-enters-definitive-agreement-be-acquired-cdpq-1375-share" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="us" data-p="2025">
+          <tr data-o="us" data-p="2025" data-s="midmkt">
             <td><div class="asset">Héroux-Devtek</div><div class="sub">Aerospace</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>Platinum Equity<div class="sub">C$32.50 per share · TSX: HRX</div></td>
             <td><span class="origin o-us">United States</span></td>
             <td class="num">~C$1.35B</td>
@@ -277,8 +299,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">11 Feb 2025<div class="sub">Court approval 16 Sep 2024</div></td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://investisseurs.herouxdevtek.com/2025-02-11-HEROUX-DEVTEK-ANNONCE-LA-REALISATION-DE-LACQUISITION-PAR-PLATINUM-EQUITY" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="us" data-p="2024">
+          <tr data-o="us" data-p="2024" data-s="midmkt">
             <td><div class="asset">Nuvei</div><div class="sub">Payments · Montreal</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>Advent International<div class="sub">Fayer, Novacap and CDPQ roll over</div></td>
             <td><span class="origin o-us">US + QC</span></td>
             <td class="num">US$34.00 per share</td>
@@ -286,8 +309,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">1 Apr 2024</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://novacapcorp.com/fr/news/nuvei-conclut-une-convention-de-transformation-en-societe-fermee-avec-advent-international/" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="energy">
             <td><div class="asset">Énergir</div><div class="sub">Gas distribution · Series 2025-1</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>Private placement<div class="sub">First mortgage bonds</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$300M</td>
@@ -295,8 +319,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">15 May 2025</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://energir.com/fr/a-propos/medias/nouvelles/energir-placement-prive-obligations-2025-1" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2023">
+          <tr data-o="qc" data-p="2023" data-s="energy">
             <td><div class="asset">Énergir</div><div class="sub">Gas distribution · Series 2023-1</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>Private placement<div class="sub">First mortgage bonds</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$400M</td>
@@ -304,8 +329,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">31 May 2023</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://energir.com/fr/a-propos/medias/nouvelles/placement-prive-obligations-premiere-hypotheque-serie-2023" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2024">
+          <tr data-o="qc" data-p="2024" data-s="energy">
             <td><div class="asset">Énergir, s.e.c.</div><div class="sub">Partnership units</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>Private placement<div class="sub">Equity issue</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$150M</td>
@@ -313,8 +339,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">22 Mar 2024</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://energir.com/fr/a-propos/medias/nouvelles/placement-privé-dobligations-de-première-hypothèque-série-2024" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2023">
+          <tr data-o="qc" data-p="2023" data-s="energy">
             <td><div class="asset">Énergir, s.e.c.</div><div class="sub">Partnership units</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>Private placement<div class="sub">Equity issue</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$213M</td>
@@ -322,8 +349,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">31 Jan 2023</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://energir.com/fr/a-propos/medias/nouvelles/placement-de-titre-de-participation-3910d" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="roc" data-p="2025">
+          <tr data-o="roc" data-p="2025" data-s="digital">
             <td><div class="asset">5C Group</div><div class="sub">AI data centre campuses · Montreal</div></td>
+            <td><span class="sect s-digital">Digital infra</span></td>
             <td>Brookfield and Deutsche Bank<div class="sub">Equity and debt</div></td>
             <td><span class="origin o-roc">Rest of Canada</span></td>
             <td class="num">US$835M</td>
@@ -331,8 +359,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">23 Jul 2025</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://5c.ai/news/5c-group-secures-835-million-of-capital-from-brookfield-and-deutsche-bank" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2026">
+          <tr data-o="qc" data-p="2026" data-s="midmkt">
             <td><div class="asset">nesto</div><div class="sub">Mortgage platform</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>Series E<div class="sub">La Caisse among backers</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">C$302M raised<div class="sub">C$1.47B valuation</div></td>
@@ -340,8 +369,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">10 Jun 2026</td>
             <td><span class="flag f-disc">Disclosed</span><div class="sub"><a class="src" href="https://www.lacaisse.com/fr/actualites/communiques/nesto-obtient-302-millions-dollars-financement-serie-e-afin-daccelerer" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="digital">
             <td><div class="asset">5C Data Centers</div><div class="sub">Acquired by Hypertec Cloud to form 5C Group</div></td>
+            <td><span class="sect s-digital">Digital infra</span></td>
             <td>Hypertec Cloud<div class="sub">Quebec acquirer</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">Not disclosed</td>
@@ -349,8 +379,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">10 Apr 2025</td>
             <td><span class="flag f-conf">Confidential</span><div class="sub"><a class="src" href="https://5c.ai/news/5c-group-formed-as-hypertec-cloud-acquires-5c-data-centers-creating-one-of-the-largest-ai-digital-infrastructure-providers-in-north-america" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="energy">
             <td><div class="asset">Parc éolien Apuiat</div><div class="sub">Wind · Côte-Nord · developed with the Innu communities</div></td>
+            <td><span class="sect s-energy">Energy</span></td>
             <td>Boralex<div class="sub">Commercial operation</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">Not disclosed</td>
@@ -358,8 +389,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">29 Oct 2025</td>
             <td><span class="flag f-conf">Confidential</span><div class="sub"><a class="src" href="https://ca.boralex.com/fr/salle-de-presse/mise-en-service-commerciale-du-parc-eolien-apuiat-debut-dune-nouvelle-ere" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2026">
+          <tr data-o="qc" data-p="2026" data-s="midmkt">
             <td><div class="asset">Groupe Rossi Aéro</div><div class="sub">Aerospace machining · consolidation of a Quebec supply chain</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>Groupe Meloche<div class="sub">Backed by Novacap and others</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">Not disclosed</td>
@@ -367,8 +399,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">4 May 2026</td>
             <td><span class="flag f-conf">Confidential</span><div class="sub"><a class="src" href="https://novacapcorp.com/fr/news/groupe-meloche-acquiert-groupe-rossi-aero-avec-le-soutien-de-novacap-et-dautres-partenaires/" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="transport">
             <td><div class="asset">Entrepôts Intramodal</div><div class="sub">Warehousing · second Alliance add-on in under four months</div></td>
+            <td><span class="sect ">Transport</span></td>
             <td>Alliance Solution Group<div class="sub">Novacap portfolio company</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">Not disclosed</td>
@@ -376,8 +409,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">9 Dec 2025</td>
             <td><span class="flag f-conf">Confidential</span><div class="sub"><a class="src" href="https://novacapcorp.com/fr/news/alliance-solution-group-sannonce-lacquisition-strategique-dintramodal/" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="us" data-p="2026">
+          <tr data-o="us" data-p="2026" data-s="midmkt">
             <td><div class="asset">Eddyfi Technologies</div><div class="sub">Non-destructive testing · Quebec City · sold to a NYSE strategic</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>ESAB Corporation<div class="sub">Novacap exit</div></td>
             <td><span class="origin o-us">United States</span></td>
             <td class="num">Not disclosed</td>
@@ -385,8 +419,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">2 Jun 2026</td>
             <td><span class="flag f-conf">Confidential</span><div class="sub"><a class="src" href="https://novacapcorp.com/fr/news/novacap-conclut-avec-succes-sa-sortie-deddyfi-technologies/" target="_blank" rel="noopener">source</a></div></td>
           </tr>
-          <tr data-o="qc" data-p="2025">
+          <tr data-o="qc" data-p="2025" data-s="midmkt">
             <td><div class="asset">GardaWorld</div><div class="sub">Security services</div></td>
+            <td><span class="sect ">Mid-market</span></td>
             <td>Founder-led consortium<div class="sub">Recapitalization</div></td>
             <td><span class="origin o-qc">Quebec</span></td>
             <td class="num">Value pending<div class="sub">Not confirmed in a primary source</div></td>
@@ -394,8 +429,9 @@ footer strong{color:var(--slate);font-weight:500}
             <td class="num">Q1 2025</td>
             <td><span class="flag f-unv">Unverified</span><div class="sub"><span class="src none">no link</span></div></td>
           </tr>
-          <tr data-o="us" data-p="2024">
+          <tr data-o="us" data-p="2024" data-s="digital">
             <td><div class="asset">Saint-Jérôme site</div><div class="sub">Compute / hosting</div></td>
+            <td><span class="sect s-digital">Digital infra</span></td>
             <td>Bit Digital<div class="sub">HPC business since separated into WhiteFiber</div></td>
             <td><span class="origin o-us">United States</span></td>
             <td class="num">Value pending<div class="sub">Not confirmed in a primary source</div></td>
@@ -462,6 +498,14 @@ footer strong{color:var(--slate);font-weight:500}
       </div>
     </div>
     <div class="log" id="log">
+      <div class="logrow" data-age="-1">
+        <div class="logdate">11 Aug 2026</div><div class="logkind">Scope</div>
+        <div class="logtext">Every transaction now carries a <b>sector</b> tag with its own filter: energy, digital infrastructure, transport and mid-market. The tracker covers all four on purpose. Labelling them makes the choice visible instead of leaving the table looking like whatever turned up.</div>
+      </div>
+      <div class="logrow" data-age="-1">
+        <div class="logdate">11 Aug 2026</div><div class="logkind">Method</div>
+        <div class="logtext">Note 1 now states its sample size. The ownership pattern rests on five transactions, which is enough to notice and not enough to prove. Saying so is more defensible than letting the reader assume a larger base.</div>
+      </div>
       <div class="logrow" data-age="-1">
         <div class="logdate">11 Aug 2026</div><div class="logkind">Presentation</div>
         <div class="logtext">Rows reordered so the fullest records read first, and the sparse entries given real context in place of an empty value column. No figures changed. Entries with sealed terms stay in the table rather than being dropped, because a deal with confidential pricing is still a deal that happened.</div>
@@ -609,7 +653,7 @@ footer strong{color:var(--slate);font-weight:500}
     <div class="note">
       <div class="meta">No. 1 · August 2026</div>
       <h3>Outside capital is not taking over Quebec's mid-market. It is being bought out.</h3>
-      <p>The easy story is that foreign money is pouring into Quebec. The transactions say otherwise, and Innergex is the clearest example. Before the take-private, Hydro-Québec already held about 19.9% and CDPQ was the second largest shareholder, having first invested in 1995. CDPQ then bought the rest at C$13.75 a share, an enterprise value of C$10.0B, and syndicated up to 20% of what it had invested to Investissement Québec, Desjardins Global Asset Management and Fondaction, along with 14 Swiss institutions. Foreign capital was not excluded. It was admitted at a size someone else chose.</p><p>Boralex followed the same logic. Brookfield did not buy around La Caisse, it bought with La Caisse, which rolled roughly 15% up to 30% of the private company, and the head office stays in Quebec. The C$1.8B eStruxture recapitalization brought in new capital while the Wener Family Office and the founding CEO reinvested rather than sold.</p><p>Where out-of-province buyers did take control, they did it in two places. Take-privates of listed companies, where a public bid cannot be quietly pre-empted. And digital infrastructure, where the domestic bench is thinner and the capital required is more than a provincial balance sheet wants to carry alone. Even those come with conditions. Blue Wolf and Stonepeak paid C$67.00 a share for Logistec in October 2023, and the announcement pairs a contemplated Investissement Québec participation with a commitment to keep the head office and operations in Quebec.</p><p>The next test is A/O 2026-01, with bids closing in February. Watch whether the winning consortia are led by domestic sponsors with foreign money behind them, and whether that shapes the financing structures that follow.</p>
+      <p>The easy story is that foreign money is pouring into Quebec. The transactions say otherwise, and Innergex is the clearest example. Before the take-private, Hydro-Québec already held about 19.9% and CDPQ was the second largest shareholder, having first invested in 1995. CDPQ then bought the rest at C$13.75 a share, an enterprise value of C$10.0B, and syndicated up to 20% of what it had invested to Investissement Québec, Desjardins Global Asset Management and Fondaction, along with 14 Swiss institutions. Foreign capital was not excluded. It was admitted at a size someone else chose.</p><p>Boralex followed the same logic. Brookfield did not buy around La Caisse, it bought with La Caisse, which rolled roughly 15% up to 30% of the private company, and the head office stays in Quebec. The C$1.8B eStruxture recapitalization brought in new capital while the Wener Family Office and the founding CEO reinvested rather than sold.</p><p>Where out-of-province buyers did take control, they did it in two places. Take-privates of listed companies, where a public bid cannot be quietly pre-empted. And digital infrastructure, where the domestic bench is thinner and the capital required is more than a provincial balance sheet wants to carry alone. Even those come with conditions. Blue Wolf and Stonepeak paid C$67.00 a share for Logistec in October 2023, and the announcement pairs a contemplated Investissement Québec participation with a commitment to keep the head office and operations in Quebec.</p><p>The next test is A/O 2026-01, with bids closing in February. Watch whether the winning consortia are led by domestic sponsors with foreign money behind them, and whether that shapes the financing structures that follow.</p><p>One caution on all of this. The pattern rests on five transactions, which is enough to notice and not enough to prove. Treat it as a hypothesis with a test attached rather than a finding. A/O 2026-01 closes bids in February and will either support it or break it.</p>
     </div>
   </div>
 </section>
@@ -647,7 +691,7 @@ footer strong{color:var(--slate);font-weight:500}
   }
 
   // table filters
-  var state={o:'all',p:'all',w:'7'};
+  var state={o:'all',p:'all',s:'all',w:'7'};
   var rows=[].slice.call(document.querySelectorAll('#tb tr'));
   var logrows=[].slice.call(document.querySelectorAll('.logrow'));
   var count=document.getElementById('count');
@@ -657,7 +701,7 @@ footer strong{color:var(--slate);font-weight:500}
   function apply(){
     var n=0;
     rows.forEach(function(r){
-      var ok=(state.o==='all'||r.dataset.o===state.o)&&(state.p==='all'||r.dataset.p===state.p);
+      var ok=(state.o==='all'||r.dataset.o===state.o)&&(state.p==='all'||r.dataset.p===state.p)&&(state.s==='all'||r.dataset.s===state.s);
       r.style.display=ok?'':'none'; if(ok)n++;
     });
     count.textContent=n+' of '+rows.length+' transactions';

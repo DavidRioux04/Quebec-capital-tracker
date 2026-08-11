@@ -39,8 +39,10 @@ def deal_row(d):
         f'<a class="src" href="{d["source"]}" target="_blank" rel="noopener">source</a>'
         if d.get("source") else '<span class="src none">no link</span>'
     )
-    return f"""          <tr data-o="{d['origin']}" data-p="{d['year']}">
+    scls = "s-" + d["sector"] if d["sector"] in ("energy", "digital") else ""
+    return f"""          <tr data-o="{d['origin']}" data-p="{d['year']}" data-s="{d['sector']}">
             <td><div class="asset">{d['asset']}</div>{sub(d.get('asset_note'))}</td>
+            <td><span class="sect {scls}">{d['sector_label']}</span></td>
             <td>{d['acquirer']}{sub(d.get('acquirer_note'))}</td>
             <td><span class="origin {ORIGIN.get(d['origin'],'o-qc')}">{d['origin_label']}</span></td>
             <td class="num">{d['value']}{sub(d.get('value_note'))}</td>

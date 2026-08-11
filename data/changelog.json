@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-11",
+    "kind": "Scope",
+    "text": "Every transaction now carries a <b>sector</b> tag with its own filter: energy, digital infrastructure, transport and mid-market. The tracker covers all four on purpose. Labelling them makes the choice visible instead of leaving the table looking like whatever turned up."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Method",
+    "text": "Note 1 now states its sample size. The ownership pattern rests on five transactions, which is enough to notice and not enough to prove. Saying so is more defensible than letting the reader assume a larger base."
+  },
+  {
+    "date": "2026-08-11",
     "kind": "Presentation",
     "text": "Rows reordered so the fullest records read first, and the sparse entries given real context in place of an empty value column. No figures changed. Entries with sealed terms stay in the table rather than being dropped, because a deal with confidential pricing is still a deal that happened."
   },
