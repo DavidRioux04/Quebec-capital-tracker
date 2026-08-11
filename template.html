@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quebec Capital Tracker — Energy, infrastructure and out-of-province capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1B22;--slate:#22333D;--paper:#E9ECEE;--surface:#FFFFFF;
+  --hydro:#0A5C7A;--amber:#B8701A;--rule:#C6CFD4;--muted:#64757F;
+  --display:'Archivo',system-ui,sans-serif;--body:'Source Serif 4',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+header.mast{border-bottom:1px solid var(--rule);background:var(--surface);position:sticky;top:0;z-index:20}
+.mast-in{display:flex;justify-content:space-between;align-items:center;padding:15px 0;gap:24px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+.brand span{color:var(--hydro)}
+.brand .stamp{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--muted);text-transform:none;font-weight:400;margin-top:3px}
+nav.top{display:flex;gap:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+nav.top a{color:var(--muted);text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;cursor:pointer}
+nav.top a:hover,nav.top a:focus-visible{color:var(--hydro);border-bottom-color:var(--hydro)}
+nav.top a.on{color:var(--ink);border-bottom-color:var(--hydro)}
+
+.hero{background:var(--surface);border-bottom:1px solid var(--rule);padding:72px 0 64px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--hydro);margin-bottom:26px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,5.6vw,4.05rem);line-height:1.03;letter-spacing:-.025em;margin:0 0 30px;max-width:16ch}
+h1 em{font-style:normal;color:var(--hydro)}
+.lede{max-width:60ch;font-size:19.5px;color:var(--slate)}
+.lede + .lede{margin-top:16px}
+.prov{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:var(--hydro);background:rgba(10,92,122,.07);border:1px solid rgba(10,92,122,.22);padding:1px 6px;border-radius:2px;white-space:nowrap;vertical-align:2px}
+.prov::before{content:"";width:5px;height:5px;background:var(--hydro);border-radius:50%;flex:none}
+
+.stat-strip{display:flex;flex-wrap:wrap;margin-top:52px;border-top:1px solid var(--rule)}
+.stat{flex:1 1 190px;padding:20px 22px 20px 0;border-right:1px solid var(--rule)}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em;line-height:1}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+
+section{padding:66px 0;border-bottom:1px solid var(--rule);scroll-margin-top:72px}
+.sec-head{display:flex;gap:18px;align-items:baseline;margin-bottom:12px}
+.docket{font-family:var(--mono);font-size:11.5px;color:var(--hydro);letter-spacing:.06em;flex:none;padding-top:4px}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,2.7vw,2.05rem);letter-spacing:-.02em;margin:0}
+.sec-note{max-width:66ch;color:var(--slate);margin:0 0 30px 0}
+
+.filters{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:18px}
+.fgroup{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.flabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.chip{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;background:transparent;border:1px solid var(--rule);color:var(--muted);padding:6px 12px;border-radius:2px;cursor:pointer;transition:.14s}
+.chip:hover{border-color:var(--hydro);color:var(--hydro)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip:focus-visible{outline:2px solid var(--hydro);outline-offset:2px}
+.count{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:12px}
+
+.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--rule)}
+table{width:100%;border-collapse:collapse;min-width:940px}
+thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:13px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;background:var(--surface)}
+tbody td{padding:15px 14px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#F6F8F9}
+.asset{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.005em}
+.sub{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+.num{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+.empty{padding:34px 16px;font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center}
+
+.flag{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:2px 6px;border-radius:2px;white-space:nowrap;display:inline-block}
+.f-disc{background:rgba(10,92,122,.1);color:var(--hydro)}
+.f-est{background:rgba(184,112,26,.13);color:var(--amber)}
+.f-conf{background:rgba(100,117,127,.14);color:var(--muted)}
+.src{font-family:var(--mono);font-size:10px;color:var(--hydro);text-decoration:none;border-bottom:1px solid rgba(10,92,122,.35)}
+.src:hover{border-bottom-color:var(--hydro)}
+.src.none{color:var(--muted);border:0}
+.f-unv{background:rgba(184,112,26,.2);color:#8A5312;font-weight:500}
+.origin{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.o-qc{color:var(--hydro)}.o-roc{color:var(--slate)}.o-us{color:var(--amber)}
+
+.pipe{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));border:1px solid var(--rule);background:var(--surface)}
+.pcard{padding:26px 24px;border-right:1px solid var(--rule)}
+.pcard:last-child{border-right:0}
+.pcard h3{font-family:var(--display);font-weight:600;font-size:17px;margin:0 0 6px;letter-spacing:-.01em}
+.pcard .mw{font-family:var(--display);font-weight:700;font-size:29px;color:var(--amber);letter-spacing:-.02em;line-height:1;margin:14px 0 4px}
+.pcard p{font-size:14.5px;color:var(--slate);margin:10px 0 0}
+.pcard .date{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
+
+.log{background:var(--surface);border:1px solid var(--rule)}
+.logrow{display:flex;gap:20px;padding:16px 20px;border-bottom:1px solid var(--rule);align-items:baseline}
+.logrow:last-child{border-bottom:0}
+.logdate{font-family:var(--mono);font-size:11.5px;color:var(--muted);flex:none;width:96px;letter-spacing:.03em}
+.logkind{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;flex:none;width:82px;color:var(--hydro)}
+.logtext{font-size:15px;color:var(--slate)}
+.logtext b{font-family:var(--display);font-weight:600;color:var(--ink)}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:38px}
+.cols h3{font-family:var(--display);font-weight:600;font-size:15px;margin:0 0 10px}
+.cols p{font-size:15.5px;color:var(--slate);margin:0 0 14px}
+ul.src{list-style:none;padding:0;margin:0;font-family:var(--mono);font-size:12.5px;line-height:2}
+ul.src li{color:var(--slate);border-bottom:1px dotted var(--rule);padding:3px 0}
+ul.src li span{color:var(--muted)}
+
+.note{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--hydro);padding:30px 32px;max-width:74ch}
+.note .meta{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.note h3{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.015em;margin:0 0 16px;max-width:24ch}
+.note p{margin:0 0 15px;color:var(--slate)}
+.note p:last-child{margin-bottom:0}
+
+footer{padding:44px 0 58px;font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.9}
+footer strong{color:var(--slate);font-weight:500}
+@media(max-width:720px){
+  .stat{border-right:0;border-bottom:1px solid var(--rule);flex-basis:100%}
+  .pcard{border-right:0;border-bottom:1px solid var(--rule)}
+  .pcard:last-child{border-bottom:0}
+  .sec-head{flex-direction:column;gap:4px}
+  header.mast{position:static}
+  .logrow{flex-wrap:wrap;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-in">
+    <div class="brand">Quebec <span>Capital Tracker</span><span class="stamp">{{STAMP}}</span></div>
+    <nav class="top" id="nav">
+      <a data-go="deals">Transactions</a>
+      <a data-go="pipeline">Pipeline</a>
+      <a data-go="changes">Changes</a>
+      <a data-go="method">Method</a>
+      <a data-go="notes">Notes</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Deal-level intelligence · v0.1</div>
+    <h1>Who gets to own <em>Quebec</em> infrastructure.</h1>
+    <p class="lede">Quebec is building the largest energy expansion in its history and its mid-market is changing hands. Most of the record sits in French — Régie de l'énergie dockets, Hydro-Québec tender results, provincial decrees — and is read by almost no one on Bay Street or in New York.</p>
+    <p class="lede">This tracker reads those filings and publishes them as structured English. Every figure carries its source and a confidence flag <span class="prov">R-4227-2023</span>. Where a number is sealed, it says so instead of estimating.</p>
+    <div class="stat-strip">
+      <div class="stat"><div class="n">10,000 MW</div><div class="l">Wind targeted by 2035</div></div>
+      <div class="stat"><div class="n">1,550 MW</div><div class="l">Awarded, A/O 2023-01</div></div>
+      <div class="stat"><div class="n">7.8¢</div><div class="l">Avg. bid, per kWh, 2023 CAD</div></div>
+      <div class="stat"><div class="n">{{N_DEALS}}</div><div class="l">Transactions · {{N_DISCLOSED}} fully disclosed</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="deals">
+  <div class="wrap">
+    <div class="sec-head"><div class="docket">01</div><h2>Transactions</h2></div>
+    <p class="sec-note">Control and recapitalization transactions in Quebec energy, digital infrastructure and mid-market assets. Deal values are enterprise value where disclosed by the parties. Nothing here is estimated.</p>
+
+    <div class="filters">
+      <div class="fgroup" role="group" aria-label="Filter by acquirer origin">
+        <span class="flabel">Origin</span>
+        <button class="chip" data-g="o" data-v="all" aria-pressed="true">All</button>
+        <button class="chip" data-g="o" data-v="qc" aria-pressed="false">Quebec</button>
+        <button class="chip" data-g="o" data-v="roc" aria-pressed="false">Rest of Canada</button>
+        <button class="chip" data-g="o" data-v="us" aria-pressed="false">US</button>
+      </div>
+      <div class="fgroup" role="group" aria-label="Filter by period">
+        <span class="flabel">Period</span>
+        <button class="chip" data-g="p" data-v="all" aria-pressed="true">All</button>
+        {{YEAR_CHIPS}}
+      </div>
+    </div>
+    <div class="count" id="count"></div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Asset</th><th>Acquirer</th><th>Origin</th><th>Value</th><th>Structure</th><th>Date</th><th>Terms</th></tr></thead>
+        <tbody id="tb">
+{{ROWS}}
+        </tbody>
+      </table>
+      <div class="empty" id="empty" style="display:none">No transactions match these filters.</div>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="wrap">
+    <div class="sec-head"><div class="docket">02</div><h2>Pipeline, not yet financed</h2></div>
+    <p class="sec-note">Quebec announces capacity years before it reaches financial close. That gap is public, it is written in French, and it is where the next decade of project finance mandates comes from.</p>
+    <div class="pipe">
+{{PIPELINE}}
+    </div>
+  </div>
+</section>
+
+<section id="changes">
+  <div class="wrap">
+    <div class="sec-head"><div class="docket">03</div><h2>Changes</h2></div>
+    <p class="sec-note">What moved in the database, and when. A tracker earns trust by showing its edits, not by looking finished. Entries are added when a filing appears, and amended when a sealed figure is later disclosed.</p>
+    <div class="filters">
+      <div class="fgroup" role="group" aria-label="Filter change log by window">
+        <span class="flabel">Window</span>
+        <button class="chip" data-g="w" data-v="7" aria-pressed="true">7 days</button>
+        <button class="chip" data-g="w" data-v="30" aria-pressed="false">30 days</button>
+        <button class="chip" data-g="w" data-v="all" aria-pressed="false">All</button>
+      </div>
+    </div>
+    <div class="log" id="log">
+{{CHANGELOG}}
+      <div class="empty" id="logempty" style="display:none">Nothing changed in this window.</div>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head"><div class="docket">04</div><h2>Method</h2></div>
+    <div class="cols">
+      <div>
+        <h3>What gets recorded</h3>
+        <p>Sponsor and sponsor type, asset and asset type, capacity, province, stage, offtake counterparty and tenor, rating, acquirer origin and capital source. Each field carries its own source and date, not one citation for the whole row.</p>
+        <h3>The disclosure cliff</h3>
+        <p>Privatization is itself a disclosure event. When a Quebec issuer goes private, its filings stop and its press archive is often pruned — Innergex now retains five press items and no investor section. Boralex will follow at close. This tracker records the last public state of an asset before the record closes, because after that no amount of searching recovers it.</p>
+        <h3>What does not</h3>
+        <p>Per-developer PPA pricing, debt tranche margins, mezzanine terms and mid-market multiples are sealed or redacted in Quebec filings. They are marked confidential rather than estimated. A tracker that guesses at them is worth less than one that admits the boundary.</p>
+      </div>
+      <div>
+        <h3>Confidence flags</h3>
+        <p><span class="flag f-disc">Disclosed</span> stated by a party or a regulator. <span class="flag f-est">Reported</span> from credible secondary press, not yet confirmed in a filing. <span class="flag f-conf">Confidential</span> exists but is sealed. <span class="flag f-unv">Unverified</span> carried from secondary reporting and not yet confirmed in a primary document — shown so the gap is visible rather than hidden.</p>
+        <h3>Primary sources</h3>
+        <ul class="src">
+          <li>Régie de l'énergie <span>dockets, decisions</span></li>
+          <li>Hydro-Québec <span>appels d'offres, Plan 2035</span></li>
+          <li>DBRS Morningstar <span>rating reports</span></li>
+          <li>SEDAR+ <span>issuer filings</span></li>
+          <li>Canada Infrastructure Bank <span>participations</span></li>
+          <li>BAPE <span>hearings, decrees</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="notes">
+  <div class="wrap">
+    <div class="sec-head"><div class="docket">05</div><h2>Notes</h2></div>
+    <p class="sec-note">Short pieces published when the data says something the consensus does not.</p>
+{{NOTES}}
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Quebec Capital Tracker</strong> — independent research. Compiled from public filings and regulatory dockets.<br>
+    Figures are as disclosed by issuers, acquirers and regulators. Sealed terms are marked as such and are not estimated.<br>
+    Not investment advice. Verify against primary sources before relying on anything here.<br>
+    David Rioux · Université Laval
+  </div>
+</footer>
+
+<script>
+(function(){
+  // nav
+  var links=document.querySelectorAll('#nav a');
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var t=document.getElementById(a.dataset.go);
+      if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  var secs=document.querySelectorAll('section');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(l){l.classList.toggle('on',l.dataset.go===en.target.id)});
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){io.observe(s)});
+  }
+
+  // table filters
+  var state={o:'all',p:'all',w:'7'};
+  var rows=[].slice.call(document.querySelectorAll('#tb tr'));
+  var logrows=[].slice.call(document.querySelectorAll('.logrow'));
+  var count=document.getElementById('count');
+  var empty=document.getElementById('empty');
+  var logempty=document.getElementById('logempty');
+
+  function apply(){
+    var n=0;
+    rows.forEach(function(r){
+      var ok=(state.o==='all'||r.dataset.o===state.o)&&(state.p==='all'||r.dataset.p===state.p);
+      r.style.display=ok?'':'none'; if(ok)n++;
+    });
+    count.textContent=n+' of '+rows.length+' transactions';
+    empty.style.display=n?'none':'block';
+
+    var m=0;
+    logrows.forEach(function(l){
+      var age=parseInt(l.dataset.age,10);
+      var ok=(state.w==='all')||(age<=parseInt(state.w,10));
+      l.style.display=ok?'':'flex'; l.style.display=ok?'flex':'none'; if(ok)m++;
+    });
+    logempty.style.display=m?'none':'block';
+  }
+
+  document.querySelectorAll('.chip').forEach(function(c){
+    c.addEventListener('click',function(){
+      var g=c.dataset.g;
+      document.querySelectorAll('.chip[data-g="'+g+'"]').forEach(function(x){x.setAttribute('aria-pressed','false')});
+      c.setAttribute('aria-pressed','true');
+      state[g]=c.dataset.v;
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+# Source registry for the Quebec Capital Tracker collector.
+#
+# method:
+#   rss   - machine-readable feed, most reliable
+#   html  - server-rendered listing page, parse links
+#   manual- content is script-rendered or session-gated; the collector
+#           cannot reach it and it stays a human job. Listed anyway so
+#           the gap is visible rather than forgotten.
+
+sources:
+  - name: Hydro-Québec
+    method: rss
+    url: https://nouvelles.hydroquebec.com/nouvelles/rss/5/salle-de-nouvelles
+    why: Bond issues with amount, coupon, price, yield, maturity and full syndicate.
+
+  - name: Énergir
+    method: html
+    url: https://energir.com/fr/a-propos/medias/nouvelles
+    base: https://energir.com
+    why: Every private placement with the amount, archived to 2017.
+
+  - name: Boralex
+    method: html
+    url: https://ca.boralex.com/fr/salle-de-presse
+    base: https://ca.boralex.com
+    pages: 6
+    why: Quebec project financings, partnerships and the Brookfield/La Caisse arrangement.
+
+  - name: La Caisse
+    method: html
+    url: https://www.lacaisse.com/fr/actualites
+    base: https://www.lacaisse.com
+    why: Quebec infrastructure and mid-market positions. Index pagination does not respond to page params.
+
+  - name: Novacap
+    method: html
+    url: https://novacapcorp.com/fr/nouvelles/
+    base: https://novacapcorp.com
+    why: Quebec mid-market add-ons and exits. Mostly outbound US activity - filter hard.
+
+  - name: Innergex
+    method: manual
+    url: https://www.innergex.com/fr/salle-de-presse
+    why: Script-rendered. Archive pruned after the CDPQ take-private.
+
+  - name: Canada Infrastructure Bank
+    method: manual
+    url: https://cib-bic.ca/fr/investissements/
+    why: Project list is script-rendered. Loan terms are privileged under s.28 of the CIB Act.
+
+  - name: SEDAR+
+    method: manual
+    url: https://www.sedarplus.ca
+    why: Session-gated and automated access is against its terms. Circulars hold the full structure.
+
+  - name: Régie de l'énergie
+    method: manual
+    url: https://www.regie-energie.qc.ca
+    why: Dockets are PDFs, French only. Per-developer PPA pricing is filed under seal.
+
+# Terms that promote an item into the review queue.
+keywords:
+  - financement
+  - clôture financière
+  - placement privé
+  - obligations
+  - émission
+  - dette subordonnée
+  - refinancement
+  - acquisition
+  - acquiert
+  - participation
+  - entente définitive
+  - appel d'offres
+  - mise en service
+  - partenariat
+  - centre de données
+  - stockage
+
+# Terms that keep an item out, even if a keyword matched.
+exclude:
+  - France
+  - Royaume-Uni
+  - Écosse
+  - Pologne
+  - Taïwan
+  - Chili
+  - nomination
+  - conseil d'administration
+  - dividende
+  - commandite
+  - bourse

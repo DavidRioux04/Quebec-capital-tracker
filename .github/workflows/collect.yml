@@ -1,0 +1,52 @@
+name: Daily source scan
+
+on:
+  schedule:
+    - cron: "0 11 * * 1-5"   # 07:00 America/Toronto, weekdays
+  workflow_dispatch:          # and on demand
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Scan sources
+        id: scan
+        run: |
+          python scripts/collect.py | tee scan.log
+          COUNT=$(python -c "import json,pathlib,datetime;q=json.loads(pathlib.Path('data/review-queue.json').read_text());print(sum(1 for i in q if i['first_seen']==datetime.date.today().isoformat()))")
+          echo "new=$COUNT" >> $GITHUB_OUTPUT
+
+      - name: Commit queue
+        run: |
+          git config user.name  "tracker-bot"
+          git config user.email "actions@github.com"
+          git add data/review-queue.json data/seen.json
+          git diff --staged --quiet || git commit -m "scan: $(date +%F)"
+          git push
+
+      - name: Open a review issue when something turned up
+        if: steps.scan.outputs.new != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const log = fs.readFileSync('scan.log', 'utf8');
+            const today = new Date().toISOString().slice(0, 10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Review queue — ${today}`,
+              body: "New items found. Open each source, confirm the figures, then move what belongs into `data/deals.json` and log the change in `data/changelog.json`.\n\n```\n" + log + "\n```"
+            });

@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Plan d'action 2035",
+    "headline": "10,000 MW",
+    "sub": "Wind, plus pumped storage and new hydro",
+    "body": "Hydro-Québec's build-out plan to 2035. Sets the ceiling for every tender that follows and, by extension, the size of the financing market.",
+    "status": "Announced · unfinanced"
+  },
+  {
+    "name": "A/O 2026-01",
+    "headline": "1,500–3,000 MW",
+    "sub": "5–10 TWh wind tender",
+    "body": "Launched 10 April 2026. First-round bids close 26 February 2027. The next visible concentration of sponsor and lender activity in Quebec renewables.",
+    "status": "Bids due 26 Feb 2027"
+  },
+  {
+    "name": "Parcs éoliens Des Neiges",
+    "headline": "1,200 MW",
+    "sub": "Boralex, Énergir, Hydro-Québec",
+    "body": "Three 400 MW sectors, traced to an April 2022 partnership. South and Charlevoix broke ground 31 March 2026 — 114 turbines, over C$2B invested, commissioning 2027 and 2028. West sector not yet sited. Financing structure not disclosed.",
+    "status": "Under construction · terms sealed"
+  },
+  {
+    "name": "A/O 2023-01",
+    "headline": "1,550 MW",
+    "sub": "8 bids retained from 5 developers",
+    "body": "Awarded at an average supply cost of 7.8¢/kWh in 2023 dollars, excluding transmission and balancing. Per-developer pricing is sealed in the Régie docket.",
+    "status": "Awarded · pre-close"
+  }
+]
