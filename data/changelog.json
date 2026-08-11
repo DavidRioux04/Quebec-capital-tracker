@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-08-11",
+    "kind": "Added",
+    "text": "<b>Note 4</b> on what the Innergex syndication reveals about the terms Quebec sets for outside capital. The 20% ceiling was fixed before any investor was approached, and Hydro-Québec's 19.9% was committed by a support agreement before the process began."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Method",
+    "text": "Method now carries a <b>Collection</b> section setting out which sources are scanned automatically, how often, and which four cannot be automated at all. The repository is public, so the source registry and the schedule can be checked rather than taken on trust."
+  },
+  {
+    "date": "2026-08-11",
     "kind": "Scope",
     "text": "Every transaction now carries a <b>sector</b> tag with its own filter: energy, digital infrastructure, transport and mid-market. The tracker covers all four on purpose. Labelling them makes the choice visible instead of leaving the table looking like whatever turned up."
   },

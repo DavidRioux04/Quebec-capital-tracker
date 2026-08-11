@@ -97,7 +97,7 @@ def main():
 
     html = (ROOT / "template.html").read_text(encoding="utf-8")
     html = (html
-        .replace("{{STAMP}}", f"Last updated {stamp} · {len(deals)} transactions · {len(pipeline)} pipeline entries")
+        .replace("{{STAMP}}", f"Collection runs daily · last build {stamp} · {len(deals)} transactions · {len(pipeline)} pipeline entries")
         .replace("{{YEAR_CHIPS}}", year_chips)
         .replace("{{ROWS}}", "\n".join(deal_row(d) for d in deals))
         .replace("{{PIPELINE}}", "\n".join(pipe_card(p) for p in pipeline))

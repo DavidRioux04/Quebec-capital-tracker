@@ -1,5 +1,10 @@
 # Quebec Capital Tracker
 
+[![Daily source scan](https://github.com/DavidRioux04/Quebec-capital-tracker/actions/workflows/collect.yml/badge.svg)](https://github.com/DavidRioux04/Quebec-capital-tracker/actions/workflows/collect.yml)
+[![Build and deploy](https://github.com/DavidRioux04/Quebec-capital-tracker/actions/workflows/deploy.yml/badge.svg)](https://github.com/DavidRioux04/Quebec-capital-tracker/actions/workflows/deploy.yml)
+
+**Live site: [davidrioux04.github.io/Quebec-capital-tracker](https://davidrioux04.github.io/Quebec-capital-tracker/)**
+
 Deal-level intelligence on Quebec energy, infrastructure and mid-market
 transactions, built by reading French-language primary sources — Régie de
 l'énergie dockets, Hydro-Québec releases, issuer filings — and publishing them
@@ -7,6 +12,21 @@ as structured English.
 
 Every figure carries its source and a confidence flag. Where a number is
 sealed, the tracker says so instead of estimating.
+
+## What is automated, and what is not
+
+The scan runs every weekday at 07:00 Toronto time. The badge above shows whether the last run passed.
+
+| Step | Who does it |
+|---|---|
+| Watch five newsrooms for new releases | Automated, weekdays |
+| Filter candidates by keyword and scope | Automated |
+| Read the release at the source | Manual |
+| Decide whether it belongs in the tracker | Manual |
+| Fill the fields and set the confidence flag | Manual |
+| Log the change and publish | Manual, then automated deploy |
+
+Four sources cannot be automated: Innergex and the Canada Infrastructure Bank render their listings in script, SEDAR+ is session-gated and its terms bar automated access, and Régie de l'énergie dockets are French PDFs. They are in `sources.yaml` marked `manual` so the gap stays visible.
 
 ## How it works
 

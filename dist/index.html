@@ -127,7 +127,7 @@ footer strong{color:var(--slate);font-weight:500}
 
 <header class="mast">
   <div class="wrap mast-in">
-    <div class="brand">Quebec <span>Capital Tracker</span><span class="stamp">Last updated 10 Aug 2026 · 25 transactions · 5 pipeline entries</span></div>
+    <div class="brand">Quebec <span>Capital Tracker</span><span class="stamp">Collection runs daily · last build 10 Aug 2026 · 25 transactions · 5 pipeline entries</span></div>
     <nav class="top" id="nav">
       <a data-go="deals">Transactions</a>
       <a data-go="pipeline">Pipeline</a>
@@ -499,6 +499,14 @@ footer strong{color:var(--slate);font-weight:500}
     </div>
     <div class="log" id="log">
       <div class="logrow" data-age="-1">
+        <div class="logdate">11 Aug 2026</div><div class="logkind">Added</div>
+        <div class="logtext"><b>Note 4</b> on what the Innergex syndication reveals about the terms Quebec sets for outside capital. The 20% ceiling was fixed before any investor was approached, and Hydro-Québec's 19.9% was committed by a support agreement before the process began.</div>
+      </div>
+      <div class="logrow" data-age="-1">
+        <div class="logdate">11 Aug 2026</div><div class="logkind">Method</div>
+        <div class="logtext">Method now carries a <b>Collection</b> section setting out which sources are scanned automatically, how often, and which four cannot be automated at all. The repository is public, so the source registry and the schedule can be checked rather than taken on trust.</div>
+      </div>
+      <div class="logrow" data-age="-1">
         <div class="logdate">11 Aug 2026</div><div class="logkind">Scope</div>
         <div class="logtext">Every transaction now carries a <b>sector</b> tag with its own filter: energy, digital infrastructure, transport and mid-market. The tracker covers all four on purpose. Labelling them makes the choice visible instead of leaving the table looking like whatever turned up.</div>
       </div>
@@ -614,6 +622,10 @@ footer strong{color:var(--slate);font-weight:500}
       <div>
         <h3>What gets recorded</h3>
         <p>Sponsor and sponsor type, asset and asset type, capacity, province, stage, offtake counterparty and tenor, rating, acquirer origin and capital source. Each field carries its own source and date, not one citation for the whole row.</p>
+        <h3>Collection</h3>
+        <p>A scan runs every weekday morning against Hydro-Québec's RSS feed and the newsrooms of Énergir, Boralex, La Caisse and Novacap. It flags candidates by keyword and files them in a queue. It never writes to the database.</p>
+        <p>Everything after that is manual. A person opens the release, reads it at the source, decides whether it belongs, fills the fields, and logs the change. Four sources cannot be automated at all: Innergex and the Canada Infrastructure Bank render their listings in script, SEDAR+ is session-gated and its terms bar automated access, and Régie de l'énergie dockets are French PDFs. Those stay a reading job.</p>
+        <p>The code is public at <a class="src" href="https://github.com/DavidRioux04/Quebec-capital-tracker" target="_blank" rel="noopener">github.com/DavidRioux04/Quebec-capital-tracker</a>, including the source registry and the scan schedule.</p>
         <h3>The disclosure cliff</h3>
         <p>Privatization is itself a disclosure event. When a Quebec issuer goes private, its filings stop and its press archive is often pruned. Innergex now retains five press items and no investor section. Boralex will follow at close. This tracker records the last public state of an asset before that happens, because afterward no amount of searching recovers it.</p>
         <h3>What does not</h3>
@@ -640,6 +652,11 @@ footer strong{color:var(--slate);font-weight:500}
   <div class="wrap">
     <div class="sec-head"><div class="docket">05</div><h2>Notes</h2></div>
     <p class="sec-note">Short pieces published when the data says something the consensus does not.</p>
+    <div class="note" style="margin-bottom:26px">
+      <div class="meta">No. 4 · August 2026</div>
+      <h3>The Innergex syndication shows the terms Quebec sets for outside money.</h3>
+      <p>Most coverage of the Innergex take-private stopped at the headline. CDPQ paid C$13.75 a share, a 58% premium to the last close and 80% to the thirty-day average, for an enterprise value of C$10.0B. That number is the least interesting part of the transaction.</p><p>The structure is where the information sits. CDPQ said at announcement that it would seek to syndicate up to 20% of its invested capital, and that the deal was not conditional on doing so. It closed on 21 July 2025 having completed that syndication. Investissement Québec, Desjardins Global Asset Management and Fondaction came in. So did 14 Swiss institutional investors. CDPQ stayed the leading shareholder.</p><p>Read the sequence in order and the terms become explicit. The ceiling was set at 20% before any outside investor was approached. The domestic institutions were named first in the release. The foreign participants were admitted as a group, at the remaining size, into a company where the buyer had already secured control. And Hydro-Québec, holding roughly 19.9% going in, had signed a support and voting agreement before the process began. Roughly a fifth of the company was already committed to the outcome on day one.</p><p>Compare that to how the same money enters elsewhere. In a normal infrastructure syndication, a lead sponsor brings partners in to share risk and the allocation is a negotiation. Here the allocation was a policy. The Swiss investors did not compete for a larger position, because a larger position was never available.</p><p>Boralex confirms the pattern from the other direction. La Caisse lent to it, held equity in it, put C$250M of subordinated debt into it in July 2025, then took it private alongside Brookfield eight months later at 30% of the private company. Brookfield holds the majority and La Caisse holds a blocking-size minority, with the head office staying in Quebec. Even the largest alternative asset manager in the world entered on those terms.</p><p>The practical read for a lender or a sponsor is not that Quebec is closed. Foreign capital is clearly welcome, and it is getting deployed. It is that the size and the shape of the position are usually decided before the conversation starts. Ask early who already holds a stake and what they have signed, because in this market that often determines what is left rather than what is negotiable.</p><p>This reads five transactions. The test is A/O 2026-01, where bids close in February. If the winning consortia are domestic-led with foreign capital in minority positions behind them, the pattern holds. If a foreign sponsor wins outright, it does not.</p>
+    </div>
     <div class="note" style="margin-bottom:26px">
       <div class="meta">No. 3 · August 2026</div>
       <h3>Hydro-Québec is funding the 2035 plan with 40-year bonds, and every Canadian dealer is in the syndicate.</h3>

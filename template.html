@@ -230,6 +230,10 @@ footer strong{color:var(--slate);font-weight:500}
       <div>
         <h3>What gets recorded</h3>
         <p>Sponsor and sponsor type, asset and asset type, capacity, province, stage, offtake counterparty and tenor, rating, acquirer origin and capital source. Each field carries its own source and date, not one citation for the whole row.</p>
+        <h3>Collection</h3>
+        <p>A scan runs every weekday morning against Hydro-Québec's RSS feed and the newsrooms of Énergir, Boralex, La Caisse and Novacap. It flags candidates by keyword and files them in a queue. It never writes to the database.</p>
+        <p>Everything after that is manual. A person opens the release, reads it at the source, decides whether it belongs, fills the fields, and logs the change. Four sources cannot be automated at all: Innergex and the Canada Infrastructure Bank render their listings in script, SEDAR+ is session-gated and its terms bar automated access, and Régie de l'énergie dockets are French PDFs. Those stay a reading job.</p>
+        <p>The code is public at <a class="src" href="https://github.com/DavidRioux04/Quebec-capital-tracker" target="_blank" rel="noopener">github.com/DavidRioux04/Quebec-capital-tracker</a>, including the source registry and the scan schedule.</p>
         <h3>The disclosure cliff</h3>
         <p>Privatization is itself a disclosure event. When a Quebec issuer goes private, its filings stop and its press archive is often pruned. Innergex now retains five press items and no investor section. Boralex will follow at close. This tracker records the last public state of an asset before that happens, because afterward no amount of searching recovers it.</p>
         <h3>What does not</h3>
