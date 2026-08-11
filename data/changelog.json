@@ -1,6 +1,11 @@
 [
   {
     "date": "2026-08-11",
+    "kind": "Presentation",
+    "text": "Rows reordered so the fullest records read first, and the sparse entries given real context in place of an empty value column. No figures changed. Entries with sealed terms stay in the table rather than being dropped, because a deal with confidential pricing is still a deal that happened."
+  },
+  {
+    "date": "2026-08-11",
     "kind": "Upgraded",
     "text": "<b>Innergex</b> moves from unverified to <b>disclosed</b>. The 25 February 2025 arrangement release gives <b>C$13.75 cash per common share</b>, a 58% premium to the C$8.71 close and 80% to the C$7.66 thirty-day VWAP, C$25.00 per preferred share, and a <b>total enterprise value of C$10.0B</b>. Hydro-Québec held roughly 19.9% and signed a support and voting agreement. The CEO and CFO undertook to reinvest not less than C$15M. Termination fees run about C$83.9M in each direction."
   },
