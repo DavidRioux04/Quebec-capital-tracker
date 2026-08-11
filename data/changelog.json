@@ -1,11 +1,117 @@
 [
-  {"date": "2026-08-10", "kind": "Added", "text": "<b>Hydro-Québec Series JU</b> — C$500M, 4.00% coupon, priced at 84.479 to yield 4.900%, maturing 15 February 2065. Seventeenth reopening of a series first issued 19 September 2024; aggregate nominal value now C$9.0B. Full syndicate disclosed."},
-  {"date": "2026-08-10", "kind": "Added", "text": "<b>Boralex subordinated debt</b> — La Caisse and Fondaction invested C$250M on 7 July 2025, eight months before the take-private was agreed. Also added <b>Parc éolien Apuiat</b>, commissioned 29 October 2025."},
-  {"date": "2026-08-10", "kind": "Corrected", "text": "<b>Boralex</b> was logged as confidential and closed. Both wrong. The 25 March release discloses C$37.25 per share, a 31.8% premium, C$9.0B enterprise value and 13× 2026E EBITDA. Reclassified as <b>pending</b> — all regulatory approvals obtained 7 August 2026, closing expected Q4 2026."},
-  {"date": "2026-08-10", "kind": "Downgraded", "text": "<b>Innergex</b> consideration reduced to <b>unverified</b>. Following the CDPQ take-private, Innergex's press room retains only five items and the investor relations section is gone. The record of its own sale is no longer on its own site."},
-  {"date": "2026-08-10", "kind": "Counter", "text": "Novacap's release archive cuts against the inbound framing: most recent activity is <b>outbound</b> — US$1.9B for IAS, the HyscaleIX data centre platform in US markets, fibre in Idaho, towers in Kentucky, plus a US$3.8B technology fund closed February 2026."},
-  {"date": "2026-08-10", "kind": "Provenance", "text": "<b>Des Neiges</b> traced to origin: Boralex, Énergir and Hydro-Québec agreed to develop three 400 MW wind projects on the Seigneurie de Beaupré on 19 April 2022. Four years from partnership to groundbreaking."},
-  {"date": "2026-08-10", "kind": "Source note", "text": "Hydro-Québec publishes an <b>RSS feed</b> of press releases — the first machine-readable source found. Bond issues appear with amount, coupon, price, yield, maturity and full syndicate. Highest-priority source for automated collection."},
-  {"date": "2026-08-10", "kind": "Source cut", "text": "<b>Northland Power</b> removed from the source list. Visible recent output is Baltic Power in Poland and Hai Long in Taiwan — outside this tracker's scope."},
-  {"date": "2026-08-10", "kind": "Added", "text": "Initial load — Quebec energy, digital infrastructure and mid-market control transactions, plus four pipeline entries."}
+  {
+    "date": "2026-08-11",
+    "kind": "Upgraded",
+    "text": "<b>Innergex</b> moves from unverified to <b>disclosed</b>. The 25 February 2025 arrangement release gives <b>C$13.75 cash per common share</b>, a 58% premium to the C$8.71 close and 80% to the C$7.66 thirty-day VWAP, C$25.00 per preferred share, and a <b>total enterprise value of C$10.0B</b>. Hydro-Québec held roughly 19.9% and signed a support and voting agreement. The CEO and CFO undertook to reinvest not less than C$15M. Termination fees run about C$83.9M in each direction."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Added",
+    "text": "<b>Innergex senior financing</b>. CDPQ funded the acquisition and the repayment of existing debt with cash on hand plus a new fully underwritten <b>C$1.2B senior facility</b>, with <b>TD Securities</b> as sole underwriter, sole lead arranger and sole bookrunner. BMO and CIBC advised Innergex, Greenhill advised the special committee, and TD Securities and Moelis advised CDPQ."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Sourced",
+    "text": "<b>Innergex</b> now has a primary source. La Caisse finalized the privatization on <b>21 July 2025</b> and completed a syndication of up to 20% of the capital it invested, bringing in <b>Investissement Québec, Desjardins Global Asset Management and Fondaction</b>, alongside <b>14 Swiss institutional investors</b>. La Caisse remains the leading shareholder and states that the vast majority of the shareholding stays in Quebec. The consideration is still not given in this release, so the value stays unverified while the structure is now confirmed."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Downgraded",
+    "text": "The <b>Saint-Jérôme</b> site figure of roughly US$40M is reclassified to <b>unverified</b>. Bit Digital's newsroom carries no trace of it. The company has since reoriented around an Ethereum treasury strategy and moved its high performance computing business into a separate entity, WhiteFiber. Whoever owns the Quebec asset today is an open question, and this entry should not be relied on until it is answered."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Method",
+    "text": "Three entries have now been downgraded for the same reason: the figure came from aggregate or secondary reporting and could not be confirmed at the source. Innergex and GardaWorld lost their releases to privatization and archive pruning. Bit Digital lost its because the company changed direction. A tracker built on company newsrooms inherits whatever those companies decide to keep."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Added",
+    "text": "<b>5C Group</b> closed <b>US$605M</b> of new debt financing led by Brookfield Asset Management on <b>10 August 2026</b>, bringing total capital raised past US$1.4B. Proceeds fund the acquisition and construction of the Memphis campus and expansion in Ohio and Phoenix. This is Brookfield's second round into the company in thirteen months."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Corrected",
+    "text": "The earlier <b>5C</b> entry named only Brookfield and gave no date. The US$835M closed <b>23 July 2025</b> and came from <b>Brookfield and Deutsche Bank</b> as a mix of equity and debt. Also added the 10 April 2025 acquisition of 5C Data Centers by Montreal-based Hypertec Cloud, which formed 5C Group, and the C$250M Mila LaSalle campus to the pipeline."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Added",
+    "text": "<b>GardaWorld</b> closed US$200M of additional 8.250% senior notes due 2032 on <b>6 July 2026</b>, tapping the US$550M issue from July 2024 and forming a single series. At the same time it upsized its US$2,338M term loan due 2029 by roughly US$300M. Proceeds go to general corporate purposes including future acquisitions, with the revolver repaid in the meantime. The CFO reported the Term Loan B was more than two times oversubscribed and the bond around three times."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Downgraded",
+    "text": "The <b>GardaWorld recapitalization</b> figure of roughly C$14.0B is reclassified to <b>unverified</b>. It came from aggregate market data, and the company's own newsroom no longer carries the release. Applying the same standard used on Innergex."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Corrected",
+    "text": "<b>eStruxture</b> carried the line \"CDPQ exited\". That claim does not appear anywhere in the company's own release and has been removed. What the release does say: the C$1.8B transaction completed <b>19 June 2024</b>, Fengate increased its equity stake with newly raised secondary capital co-led by Partners Group and Pantheon, and the Wener Family Office and CEO Todd Coleman reinvested a significant portion of their holdings. Scotiabank and DH Capital advised eStruxture; Campbell Lutyens advised Fengate."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Note",
+    "text": "The eStruxture recapitalization belongs with Boralex and Nuvei rather than apart from them. Founders and existing holders rolled over instead of cashing out, and the new money came in through a secondary structure rather than a clean change of control."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Corrected",
+    "text": "<b>Logistec</b> was logged under 2024 at roughly C$1.2B with no detail. The arrangement agreement was announced <b>16 October 2023</b> at <b>C$67.00 cash per share</b>, a 61.2% premium to the unaffected 20-day VWAP, for a total enterprise value near C$1.2B. Blue Wolf acted in partnership with Stonepeak, and the release contemplates a participation by <b>Investissement Québec</b> tied to a commitment to keep the head office and operations in Quebec. Reclassified to 2023 and reflagged US + QC."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Sourced",
+    "text": "<b>Héroux-Devtek</b> linked to the company's own release and the closing date corrected to <b>11 February 2025</b>. The full sequence is now on record: shareholder approval 6 September 2024, court approval 16 September 2024, regulatory approvals 5 February 2025, closing six days later."
+  },
+  {
+    "date": "2026-08-11",
+    "kind": "Note",
+    "text": "The Héroux-Devtek investor site remains live more than a year after the Platinum Equity take-private, with the full release archive intact. Innergex pruned its own. Going private does not automatically close the record, so the archive is worth capturing early either way."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Added",
+    "text": "<b>Hydro-Québec Series JU</b>. C$500M at a 4.00% coupon, priced at 84.479 to yield 4.900%, maturing 15 February 2065. Seventeenth reopening of a series first issued 19 September 2024. The series now totals C$9.0B. Full syndicate disclosed."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Added",
+    "text": "<b>Boralex subordinated debt</b>. La Caisse and Fondaction invested C$250M on 7 July 2025, eight months before the take-private was agreed. Also added <b>Parc éolien Apuiat</b>, commissioned 29 October 2025."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Corrected",
+    "text": "<b>Boralex</b> was logged as confidential and closed. Both were wrong. The 25 March release gives C$37.25 per share, a 31.8% premium, C$9.0B enterprise value and 13× 2026E EBITDA. Reclassified as <b>pending</b>: all regulatory approvals were obtained 7 August 2026, with closing expected in Q4 2026."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Downgraded",
+    "text": "<b>Innergex</b> consideration reduced to <b>unverified</b>. After the CDPQ take-private, the Innergex press room retains only five items and the investor relations section is gone. The record of its own sale is no longer on its own site."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Counter",
+    "text": "Novacap's release archive works against the inbound framing. Most of its recent activity is <b>outbound</b>: US$1.9B for IAS, the HyscaleIX data centre platform in US markets, fibre in Idaho, towers in Kentucky, and a US$3.8B technology fund closed in February 2026."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Provenance",
+    "text": "<b>Des Neiges</b> traced back to its origin. Boralex, Énergir and Hydro-Québec agreed to develop three 400 MW wind projects on the Seigneurie de Beaupré on 19 April 2022. Four years passed between that agreement and groundbreaking."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Source note",
+    "text": "Hydro-Québec publishes an <b>RSS feed</b> of press releases, the first machine-readable source found. Bond issues appear there with amount, coupon, price, yield, maturity and full syndicate. Highest priority for automated collection."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Source cut",
+    "text": "<b>Northland Power</b> removed from the source list. Its recent output is Baltic Power in Poland and Hai Long in Taiwan, outside the scope of this tracker."
+  },
+  {
+    "date": "2026-08-10",
+    "kind": "Added",
+    "text": "Initial load. Quebec energy, digital infrastructure and mid-market control transactions, plus four pipeline entries."
+  }
 ]

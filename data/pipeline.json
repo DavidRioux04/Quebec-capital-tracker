@@ -17,7 +17,7 @@
     "name": "Parcs éoliens Des Neiges",
     "headline": "1,200 MW",
     "sub": "Boralex, Énergir, Hydro-Québec",
-    "body": "Three 400 MW sectors, traced to an April 2022 partnership. South and Charlevoix broke ground 31 March 2026 — 114 turbines, over C$2B invested, commissioning 2027 and 2028. West sector not yet sited. Financing structure not disclosed.",
+    "body": "Three 400 MW sectors, traced to an April 2022 partnership. South and Charlevoix broke ground 31 March 2026, with 114 turbines and over C$2B invested. Commissioning is set for 2027 and 2028. West sector not yet sited. Financing structure not disclosed.",
     "status": "Under construction · terms sealed"
   },
   {
@@ -26,5 +26,12 @@
     "sub": "8 bids retained from 5 developers",
     "body": "Awarded at an average supply cost of 7.8¢/kWh in 2023 dollars, excluding transmission and balancing. Per-developer pricing is sealed in the Régie docket.",
     "status": "Awarded · pre-close"
+  },
+  {
+    "name": "LaSalle campus",
+    "headline": "C$250M",
+    "sub": "Mila, 5C and Hypertec",
+    "body": "A sovereign AI research hub announced 25 September 2025 for the LaSalle borough of Montreal. Financing structure not disclosed. The clearest Quebec case of AI compute being built where the power is.",
+    "status": "Announced 25 Sep 2025"
   }
 ]
