@@ -1,5 +1,17 @@
 [
   {
+    "number": "No. 5",
+    "date": "November 2026",
+    "title": "Boralex went private in August and raised C$600M in public debt in November. Seven banks underwrote it.",
+    "paragraphs": [
+      "The take-private closed on 14 August at C$37.25 a share, and the stock was delisted three days later. Boralex ceased to be a reporting issuer in every province. On the tracker's own framing, that was supposed to be the end of the public record.",
+      "It was not. On 13 November, Boralex agreed to issue C$600M of medium-term notes: C$250M of Series 1 at 4.503% to November 2031, and C$350M of Series 2 at 5.173% to November 2036. Morningstar DBRS rated them BBB with a stable trend. Proceeds repay the bridge facility that funded the buyout. The agency syndicate was BMO, CIBC, Desjardins, National Bank, RBC, Scotia and TD, with Brookfield Securities Canada alongside them.",
+      "That last detail is the one worth sitting with. The buyer's own dealer sat in the syndicate placing debt into the company it had just bought. The bridge-to-bond sequence is ordinary leveraged finance; what is less ordinary is seeing it laid out in a public release by a company that had just exited public reporting.",
+      "This cuts against the disclosure-cliff argument in the Method section, and the correction belongs here rather than buried in the changelog. Equity disclosure ended at delisting. Debt disclosure did not, because a private issuer selling rated notes into the Canadian private placement market still has to tell the market the coupon, the tenor and the rating. Innergex pruned its archive and went quiet. Boralex kept publishing, because it kept borrowing.",
+      "The practical read is that the private market record is more accessible through the credit side than the equity side. A Quebec issuer that goes private stops filing circulars but keeps issuing paper, and every issuance carries terms. For anyone trying to track these assets after they leave the exchange, the rating agencies and the note announcements are the surviving window."
+    ]
+  },
+  {
     "number": "No. 4",
     "date": "August 2026",
     "title": "The Innergex syndication shows the terms Quebec sets for outside money.",
@@ -43,6 +55,7 @@
       "Boralex followed the same logic. Brookfield did not buy around La Caisse, it bought with La Caisse, which rolled roughly 15% up to 30% of the private company, and the head office stays in Quebec. The C$1.8B eStruxture recapitalization brought in new capital while the Wener Family Office and the founding CEO reinvested rather than sold.",
       "Where out-of-province buyers did take control, they did it in two places. Take-privates of listed companies, where a public bid cannot be quietly pre-empted. And digital infrastructure, where the domestic bench is thinner and the capital required is more than a provincial balance sheet wants to carry alone. Even those come with conditions. Blue Wolf and Stonepeak paid C$67.00 a share for Logistec in October 2023, and the announcement pairs a contemplated Investissement Québec participation with a commitment to keep the head office and operations in Quebec.",
       "The next test is A/O 2026-01, with bids closing in February. Watch whether the winning consortia are led by domestic sponsors with foreign money behind them, and whether that shapes the financing structures that follow.",
+      "An update three months on. The pattern has held in energy and broken in digital infrastructure. Boralex closed and immediately went shopping in the UK. But in October, La Caisse agreed to take 49.9% of Bell's tower company, deliberately stopping short of control, and separately partnered with Macquarie on Maple and with SMBC on an aircraft leasing platform. Those are not ownership-wall deals. They are a provincial fund taking minority positions alongside global managers, which is the opposite of the behaviour this note described. The wall appears to be specific to Quebec-headquartered energy platforms rather than general to Quebec assets.",
       "One caution on all of this. The pattern rests on five transactions, which is enough to notice and not enough to prove. Treat it as a hypothesis with a test attached rather than a finding. A/O 2026-01 closes bids in February and will either support it or break it."
     ]
   }
